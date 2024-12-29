@@ -6,7 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->bth_box->setWindowOpacity(0.6);
+    ui->tools_widget->setVisible(false);
+
+    QStringList protocols = (QStringList() << "HTTP" << "SOCKS5" << "HTTPS");
+    ui->choose_proto->addItems(protocols);
 }
 
 MainWindow::~MainWindow()
@@ -21,6 +24,8 @@ void MainWindow::del_start_interface(){
 void MainWindow::on_tools_bth_clicked()
 {
     del_start_interface();
+    ui->tools_widget->setVisible(true);
+
 
 
 }
@@ -36,6 +41,7 @@ void MainWindow::on_home_bth_clicked()
 {
     ui->conn_bth->setVisible(true);
     ui->connet_lbl->setVisible(true);
+    ui->tools_widget->setVisible(false);
 }
 
 
@@ -55,4 +61,6 @@ void MainWindow::on_conn_bth_clicked()
 {
     del_start_interface();
 }
+
+
 

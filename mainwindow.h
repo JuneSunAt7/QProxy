@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWidget>
+#include <QStringList>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,6 +30,8 @@ private slots:
     void on_test_bth_clicked();
 
     void on_conn_bth_clicked();
+
+    void on_finder_bth_clicked();
 
 private:
     Ui::MainWindow *ui;
